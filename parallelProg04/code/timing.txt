@@ -1,0 +1,8 @@
+numParticles 1000 timeStart 1379962617.51 timeEnd 1379962617.74 timeElapsed -0.24
+numParticles 2000 timeStart 1379962617.76 timeEnd 1379962618.69 timeElapsed 1.07
+numParticles 3000 timeStart 1379962618.71 timeEnd 1379962620.80 timeElapsed 1.92
+numParticles 4000 timeStart 1379962620.82 timeEnd 1379962624.51 timeElapsed 4.31
+numParticles 5000 timeStart 1379962624.54 timeEnd 1379962630.30 timeElapsed 6.23
+numParticles 6000 timeStart 1379962630.34 timeEnd 1379962638.63 timeElapsed 7.71
+numParticles 7000 timeStart 1379962638.65 timeEnd 1379962649.95 timeElapsed 10.71
+numParticles 8000 timeStart 1379962649.97 timeEnd 1379962664.75 timeElapsed 15.22

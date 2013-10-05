@@ -1,0 +1,15 @@
+# Test info
+maxNumProcesses="32"
+
+# Arguments to executable
+numParticles="8000"
+shape="square"
+radius="1.0"
+
+# Run jobs
+for numProcesses in $(seq $maxNumProcesses)
+do
+    printf "numNodes 5 numProcesses $numProcesses " >> timing.txt
+    mpirun -n $numProcesses --hostfile hostfile /home/costrouc/code/mytime /home/costrouc/code/particles numParticles $numParticles shape $shape radius $radius 2>> timing.txt
+    echo "" >> timing.txt
+done

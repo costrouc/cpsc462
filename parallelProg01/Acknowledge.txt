@@ -1,0 +1,3 @@
+Credits for parseArgs.c, parseArgs.h, compute.h, compute.c go to Dr. David Banks dbanks@utk.edu
+
+Otherwise all work was done by Christopher Ostrouchov.

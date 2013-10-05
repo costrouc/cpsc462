@@ -1,0 +1,28 @@
+#$ -N _job_name_
+#$ -q short*
+#$ -cwd
+#$ -S /bin/bash
+#$ -pe openmpi* _num_nodes_
+
+# Test info
+maxNumProcesses="_max_num_processes_"
+
+# Arguments to executable
+numParticles="_num_particles_"
+shape="_shape_"
+radius="_radius_"
+
+# Load bashrc
+source /etc/bashrc
+
+# Print enviroment of script to stdout
+sh ../../scripts/info.sh 
+
+# Run jobs
+printf "numNodes _num_nodes_ numProcesses $numProcesses " >> timing.txt
+for host in $(awk '{print $1}' $PE_HOSTFILE')
+do
+   
+   mpirun -n $numProcesses ../../mytime ../../particles numParticles $numParticles shape $shape radius $radius 2>> timing.txt
+   echo "" >> timing.txt
+done

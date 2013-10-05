@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="row-fluid">
+
+    <div class="well">
+      <h1>Parallel Programming</h1>
+    </div>
+
+    <section>
+
+      <figure>
+	<center>
+	  <img src="images/newton.jpeg" class="img-responsive" width="600px">
+	  <figcaption>
+	    <a href="http://newton.utk.edu">Newton Cluster</a> located at the University of Tennessee
+	  </figcaption>
+	</center>
+      </figure>
+
+      <p>
+	This is a site to show off the work that was done in our parallel
+	computing class. Throughout the class we are given several
+	<a href="#/projects">projects</a> where we demonstrate certain aspects
+	central to parallel computing. This class covers the use of
+	openMP, MPI, and pthreads.
+      </p>
+
+      <div ng-controller="textEditorController">
+	<div ui-ace="{useWrapMode: true, showGutter: true, theme:'twilight', mode: 'c_cpp'}" readonly="false">int main(int argc, char **argv) {
+   int foo;
+   int bar = 4;</div>
+      </div>
+
+    </section>
+  </div>
+
+</div><!-- /.container -->

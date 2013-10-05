@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="row-fluid">
+    <div class="well">
+      <h1>About me</h1>
+    </div>
+    <section>
+      I am Chris Ostrouchov a graduate student at the University of Tennessee.
+      I am in the Material Science and Engineering department working for
+      <a href="http://web.utk.edu/~mse/faculty/weber/default.html">Dr. William Weber</a>
+      . My research focus is on the effect of radiation on materials with an emphasis in computation. 
+      I have a huge passion for the combination of computer science, mathematics, and material science and engineering
+      to solve unique and otherwise difficult problems. In the course CPSC 462 I hope to learn great habits for managing
+      small and large code (make files, shell/python scripting, testing, and timing), learn more about the UNIX OS (/proc, taskset), become
+      familiar with openMPI, openMP, and pthreads.
+    </section>
+  </div>
+  
+</div>

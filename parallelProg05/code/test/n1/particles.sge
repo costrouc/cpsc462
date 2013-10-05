@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#$ -N n1
+#$ -q short*
+#$ -cwd
+#$ -S /bin/bash
+#$ -pe openmpi* 6
+
+source /etc/bashrc
+
+# Print enviroment of script to stdout
+sh ../../scripts/info.sh 
+
+for node in $(awk '{print $1}' $PE_HOSTFILE)
+do
+    ssh $node $PWD/test
+done
+
+echo "Now using mpi!"
+mpirun -np 6 $PWD/test

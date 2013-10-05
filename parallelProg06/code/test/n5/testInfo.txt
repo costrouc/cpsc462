@@ -1,0 +1,9 @@
+Ran executable particle with same parameters differing number of processors and nodes dedicated to the task see particle.qsub for complete details
+Computing Info:
+numNodes 5
+numProcesses 1 .. 32
+
+Parameters:
+numParticles 8000
+shape square
+radius 1.0

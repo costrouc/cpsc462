@@ -1,0 +1,32 @@
+Currently Loaded Modulefiles:
+  1) intel-compilers/2011.5.220   5) R/3.0.1
+  2) matlab/R2013a                6) emacs/23.2
+  3) openmpi/1.4.3-intel-psm      7) defaults
+  4) site_utilities
+openmpi/1.4.1-gcc(15):ERROR:150: Module 'openmpi/1.4.1-gcc' conflicts with the currently loaded module(s) 'openmpi/1.4.3-intel-psm'
+openmpi/1.4.1-gcc(15):ERROR:102: Tcl command execution failed: conflict openmpi
+
+openmpi/1.4.1-gcc(15):ERROR:150: Module 'openmpi/1.4.1-gcc' conflicts with the currently loaded module(s) 'openmpi/1.4.3-intel-psm'
+openmpi/1.4.1-gcc(15):ERROR:102: Tcl command execution failed: conflict openmpi
+
+openmpi/1.4.1-gcc(15):ERROR:150: Module 'openmpi/1.4.1-gcc' conflicts with the currently loaded module(s) 'openmpi/1.4.3-intel-psm'
+openmpi/1.4.1-gcc(15):ERROR:102: Tcl command execution failed: conflict openmpi
+
+openmpi/1.4.1-gcc(15):ERROR:150: Module 'openmpi/1.4.1-gcc' conflicts with the currently loaded module(s) 'openmpi/1.4.3-intel-psm'
+openmpi/1.4.1-gcc(15):ERROR:102: Tcl command execution failed: conflict openmpi
+
+openmpi/1.4.1-gcc(15):ERROR:150: Module 'openmpi/1.4.1-gcc' conflicts with the currently loaded module(s) 'openmpi/1.4.3-intel-psm'
+openmpi/1.4.1-gcc(15):ERROR:102: Tcl command execution failed: conflict openmpi
+
+bash: module: line 1: syntax error: unexpected end of file
+bash: error importing function definition for `module'
+openmpi/1.4.1-gcc(15):ERROR:150: Module 'openmpi/1.4.1-gcc' conflicts with the currently loaded module(s) 'openmpi/1.4.3-intel-psm'
+openmpi/1.4.1-gcc(15):ERROR:102: Tcl command execution failed: conflict openmpi
+
+bash: module: line 1: syntax error: unexpected end of file
+bash: error importing function definition for `module'
+openmpi/1.4.1-gcc(15):ERROR:150: Module 'openmpi/1.4.1-gcc' conflicts with the currently loaded module(s) 'openmpi/1.4.3-intel-psm'
+openmpi/1.4.1-gcc(15):ERROR:102: Tcl command execution failed: conflict openmpi
+
+bash: module: line 1: syntax error: unexpected end of file
+bash: error importing function definition for `module'

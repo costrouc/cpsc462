@@ -1,0 +1,28 @@
+#$ -N n2
+#$ -q short*
+#$ -cwd
+#$ -S /bin/bash
+#$ -pe openmpi* 2
+
+# Test info
+maxNumProcesses="32"
+
+# Arguments to executable
+numParticles="8000"
+shape="square"
+radius="1.0"
+
+# Load modules
+source /etc/profile
+module add openmpi/1.4.1-gcc
+
+# Print enviroment of script to stdout
+sh ../../scripts/info.sh 
+
+# Run jobs
+for numProcesses in $(seq $maxNumProcesses)
+do
+   printf "numNodes 2 numProcesses $numProcesses " >> timing.txt
+   mpirun -n $numProcesses ../../mytime ../../particles numParticles $numParticles shape $shape radius $radius 2>> timing.txt
+   echo "" >> timing.txt
+done

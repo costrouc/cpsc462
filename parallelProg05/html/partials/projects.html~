@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="row">
+    <div class="well">
+      <h1>Projects</h1>
+      <p>
+	Projects completed in COSC 462 are detailed below. A brief discussion
+	of the programming and algorithms used for each project are discussed
+	below. Further information on each project can be found on my
+	<a href="http://blog.chrisostrouchov.com">blog</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <h2>Project 1</h2>
+    <p>
+      <a class="btn btn-small" href="../../parallelProg01/">Source</a>
+      <a class="btn btn-small" href="../../parallelProg01/parallelProg01.tgz">Tar File</a>
+    </p>
+    <p>
+      <br>
+      <img src="../../parallelProg01/plots/timing.png" class="img-polaroid">
+      <br>
+      This plot shows the amount of time that it takes to read in numbers from
+      text files with n number of numbers. The program fakes that it is doing
+      a hard computation for each number and waits computeEffort time. This
+      calculation is expected to be O(N).
+    </p>
+  </div>
+
+  <div class="row-fluid">
+    <h2>Project 2</h2>
+    <p>
+      <a class="btn btn-small" href="../../parallelProg02/">Source</a>
+      <a class="btn btn-small" href="../../parallelProg02/parallelProg02.tgz">Tar File</a>
+    </p>
+    <p>
+      <br>
+      <img src="../../parallelProg02/plots/timing.png" class="img-polaroid">
+      <br>
+      This plot show the amount of time that it takes for a particle generation
+      and statistics program to generate n particles and calculate the means
+      and variaces of the positions, distances, and inverse square distances.
+      This calculation is expected to be O(N^2). 
+    </p>
+  </div>
+
+  <div class="row-fluid">
+    <h2>Project 4</h2>
+    <p>
+      <a class="btn btn-small" href="../code/">Source</a>
+      <a class="btn btn-small" href="../code/parallelProg04.tgz">Tar File</a>
+    </p>
+    <p>
+      <br>
+      <img src="../code/plots/timing.png" class="img-polaroid">
+      <br>
+      This plot show the amount of time that it takes for a particle generation
+      and statistics program to generate n particles and calculate the means
+      and variaces of the positions, distances, and inverse square distances.
+      This calculation is expected to be O(N^2). It is bumpy due to the roundoff error
+      in timing. I am working to fix this error. This code was run on the Newton cluser.
+    </p>
+    <p>
+      <br>
+      <img src="../code/plots/timing1.png" class="img-polaroid">
+      <br>
+      This plot show the amount of time that it takes for a particle generation
+      and statistics program to generate n particles and calculate the means
+      and variaces of the positions, distances, and inverse square distances.
+      This calculation is expected to be O(N^2). It is bumpy due to the roundoff error
+      in timing. I am working to fix this error. This code was run on the custom cluser
+      in the Min Kao building.
+    </p>
+    <p>
+      <a href="notes.html">Notes</a> on how I set up the cluster in the Min Kao Building
+    </p>
+    
+  </div>
+
+  <div class="row-fluid">
+    <h2>Project 5</h2>
+    <p>
+      <a class="btn btn-small" href="../code/">Source</a>
+      <a class="btn btn-small" href="../code/parallelProg05.tgz">Tar File</a>
+    </p>
+    <p>
+      <br>
+      <img src="../code/plots/timingn1.png" class="img-polaroid">
+      <br>
+      This plot show the amount of time that is required for the particle
+      program to run on 1 core on the compute nodes setup in class. Making
+      sure that the code ran on only one node was a tough task. To ensure
+      that the program remained on one node the programs were run with taskset
+      binding each process to the first core.
+    </p>
+    <p>
+      <br>
+      <img src="../code/plots/timingn2.png" class="img-polaroid">
+      <br>
+      Similar to the first plot this time the code was run on two cores. This can
+      easily be seen by looking at the two equal time points for 1 and 2 processes.
+    </p>
+    <p>
+      <br>
+      <img src="../code/plots/timingn1scaled.png" class="img-polaroid">
+      <br>
+      In order to show the ammount of time wasted by the cpu having to \"juggle\"
+      n processes the time for each run has been normalized. You can see that there
+      is a logarithmic cost associated with running more processes than the compute
+      node has available cores.
+    </p>
+    <p>
+      <br>
+      <img src="../code/plots/timingn2scaled.png" class="img-polaroid">
+      <br>
+      Similar to the previous figure notice the logarithmic cost. The first timing point
+      was not shown in the plot due to the scaling of the plot.
+    </p> 
+        <p>
+      <br>
+      <img src="../code/plots/timingscompared.png" class="img-polaroid">
+      <br>
+      The time to run the code with 1 and 2 cores is compared. We can see that
+      the code on 2 cores runs twice as fast as with one core. This demonstrates
+      weak scaling and that the tast is embarrasingly parallel.
+    </p> 
+  </div>
+  
+</div><!-- /.container -->

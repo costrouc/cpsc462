@@ -1,0 +1,167 @@
+================================================================
+SHELL=/bin/bash
+JOB_NAME=n1
+JOB_ID=1622401
+SGE_TASK_ID=undefined
+SGE_TASK_FIRST=undefined
+SGE_TASK_LAST=undefined
+NSLOTS=6
+QUEUE=short_rho
+SGE_CWD_PATH=/data/cosc462web/costrouc/parallelProg05/code/test/n1
+PATH=/opt/sge/bin/lx24-amd64:/usr/lib64/qt-3.3/bin:/data/apps/emacs/23.2/bin:/data/apps/R/3.0.1/bin:/data/apps/site_utilities:/data/apps/openmpi/1.4.3-intel-psm/bin:/data/apps/MATLAB/R2013a/bin:/data/apps/intel/2011.5.220/composerxe-2011.5.220/bin/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/mpirt/bin/intel64:/usr/kerberos/bin:/tmp/1622401.1.short_rho:/usr/local/bin:/bin:/usr/bin
+SGE_STDIN_PATH=/dev/null
+SGE_STDOUT_PATH=/data/cosc462web/costrouc/parallelProg05/code/test/n1/n1.o1622401
+SGE_STDERR_PATH=/data/cosc462web/costrouc/parallelProg05/code/test/n1/n1.e1622401
+SGE_O_HOST=login6
+SGE_O_PATH=/opt/sge/bin/lx24-amd64:/usr/lib64/qt-3.3/bin:/data/apps/emacs/23.2/bin:/data/apps/R/3.0.1/bin:/data/apps/site_utilities:/data/apps/openmpi/1.4.3-intel-psm/bin:/data/apps/MATLAB/R2013a/bin:/data/apps/intel/2011.5.220/composerxe-2011.5.220/bin/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/mpirt/bin/intel64:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin
+================================================================
+
+Loaded Modules:
+
+Enviroment for script
+MODULE_VERSION_STACK=3.2.7
+MKLROOT=/data/apps/intel/2011.5.220/composerxe-2011.5.220/mkl
+MANPATH=/opt/sge/man:/data/apps/emacs/23.2/share/man:/data/apps/R/3.0.1/share/man:/data/apps/openmpi/1.4.3-intel-psm/share/man:/data/apps/intel/2011.5.220/composerxe-2011.5.220/man/en_US:/data/apps/intel/2011.5.220/composerxe-2011.5.220/man/en_US:/data/apps/Modules/3.2.7/share/man:
+HOSTNAME=rho02.local
+SGE_TASK_STEPSIZE=undefined
+IPPROOT=/data/apps/intel/2011.5.220/composerxe-2011.5.220/ipp
+TERM=linux
+SHELL=/bin/bash
+NHOSTS=4
+TMPDIR=/tmp/1622401.1.short_rho
+SGE_O_WORKDIR=/data/cosc462web/costrouc/parallelProg05/code/test/n1
+SGE_O_HOME=/home/costrouc
+LIBRARY_PATH=/data/apps/intel/2011.5.220/composerxe-2011.5.220/compiler/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/ipp/../compiler/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/ipp/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/compiler/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/mkl/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21
+SGE_CELL=default
+SGE_ARCH=lx24-amd64
+FPATH=/data/apps/intel/2011.5.220/composerxe-2011.5.220/mkl/include
+QTDIR=/usr/lib64/qt-3.3
+QTINC=/usr/lib64/qt-3.3/include
+RESTARTED=0
+ARC=lx24-amd64
+USER=costrouc
+LS_COLORS=no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tz=01;31:*.rpm=01;31:*.cpio=01;31:*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.xbm=01;35:*.xpm=01;35:*.png=01;35:*.tif=01;35:
+LD_LIBRARY_PATH=/data/apps/openmpi/1.4.3-intel-psm/lib:/data/apps/intel/2011.5.220/composerxe-2011.5.220/compiler/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/ipp/../compiler/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/ipp/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/compiler/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/mkl/lib/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/tbb/lib/intel64//cc4.1.0_libc2.4_kernel2.6.16.21:/data/apps/intel/2011.5.220/composerxe-2011.5.220/mpirt/lib/intel64
+SGE_TASK_LAST=undefined
+QUEUE=short_rho
+CPATH=/data/apps/intel/2011.5.220/composerxe-2011.5.220/mkl/include:/data/apps/intel/2011.5.220/composerxe-2011.5.220/tbb/include
+SGE_TASK_ID=undefined
+NLSPATH=/data/apps/intel/2011.5.220/composerxe-2011.5.220/compiler/lib/intel64/locale/%l_%t/%N:/data/apps/intel/2011.5.220/composerxe-2011.5.220/ipp/lib/intel64/locale/%l_%t/%N:/data/apps/intel/2011.5.220/composerxe-2011.5.220/mkl/lib/intel64/locale/%l_%t/%N:/data/apps/intel/2011.5.220/composerxe-2011.5.220/debugger/intel64/locale/%l_%t/%N
+PATH=/opt/sge/bin/lx24-amd64:/usr/lib64/qt-3.3/bin:/data/apps/emacs/23.2/bin:/data/apps/R/3.0.1/bin:/data/apps/site_utilities:/data/apps/openmpi/1.4.3-intel-psm/bin:/data/apps/MATLAB/R2013a/bin:/data/apps/intel/2011.5.220/composerxe-2011.5.220/bin/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/mpirt/bin/intel64:/usr/kerberos/bin:/tmp/1622401.1.short_rho:/usr/local/bin:/bin:/usr/bin
+SGE_BINARY_PATH=/opt/sge/bin/lx24-amd64
+MODULE_VERSION=3.2.7
+LD_CONFIG_PATH=/data/apps/R/3.0.1/lib64/R/lib
+SGE_STDERR_PATH=/data/cosc462web/costrouc/parallelProg05/code/test/n1/n1.e1622401
+PWD=/data/cosc462web/costrouc/parallelProg05/code/test/n1
+_LMFILES_=/data/apps/Modules/3.2.7/modulefiles/intel-compilers/2011.5.220:/data/apps/Modules/3.2.7/modulefiles/matlab/R2013a:/data/apps/Modules/3.2.7/modulefiles/openmpi/1.4.3-intel-psm:/data/apps/Modules/3.2.7/modulefiles/site_utilities:/data/apps/Modules/3.2.7/modulefiles/R/3.0.1:/data/apps/Modules/3.2.7/modulefiles/emacs/23.2:/data/apps/Modules/3.2.7/modulefiles/defaults
+SGE_EXECD_PORT=537
+SGE_ACCOUNT=sge
+SGE_STDOUT_PATH=/data/cosc462web/costrouc/parallelProg05/code/test/n1/n1.o1622401
+LANG=en_US.UTF-8
+SGE_QMASTER_PORT=536
+JOB_NAME=n1
+JOB_SCRIPT=/opt/sge/default/spool/rho02/job_scripts/1622401
+MODULEPATH=/data/apps/Modules/versions:/data/apps/Modules/$MODULE_VERSION/modulefiles:/data/apps/Modules/modulefiles
+SGE_ROOT=/opt/sge
+LOADEDMODULES=intel-compilers/2011.5.220:matlab/R2013a:openmpi/1.4.3-intel-psm:site_utilities:R/3.0.1:emacs/23.2:defaults
+REQNAME=n1
+LM_LICENSE_FILE=27000@labslm3.utk.tennessee.edu:28518@license.newton.utk.edu
+ENVIRONMENT=BATCH
+SGE_JOB_SPOOL_DIR=/opt/sge/default/spool/rho02/active_jobs/1622401.1
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+PE_HOSTFILE=/opt/sge/default/spool/rho02/active_jobs/1622401.1/pe_hostfile
+SHLVL=3
+HOME=/home/costrouc
+NQUEUES=4
+SGE_CWD_PATH=/data/cosc462web/costrouc/parallelProg05/code/test/n1
+SGE_O_LOGNAME=costrouc
+OMPI_MCA_btl_openib_warn_no_device_params_found=0
+SGE_O_MAIL=/var/spool/mail/costrouc
+LOGNAME=costrouc
+JOB_ID=1622401
+TMP=/tmp/1622401.1.short_rho
+CVS_RSH=ssh
+QTLIB=/usr/lib64/qt-3.3/lib
+PE=openmpi_rho
+SGE_TASK_FIRST=undefined
+MODULESHOME=/data/apps/Modules/3.2.7
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+SGE_O_PATH=/opt/sge/bin/lx24-amd64:/usr/lib64/qt-3.3/bin:/data/apps/emacs/23.2/bin:/data/apps/R/3.0.1/bin:/data/apps/site_utilities:/data/apps/openmpi/1.4.3-intel-psm/bin:/data/apps/MATLAB/R2013a/bin:/data/apps/intel/2011.5.220/composerxe-2011.5.220/bin/intel64:/data/apps/intel/2011.5.220/composerxe-2011.5.220/mpirt/bin/intel64:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin
+SGE_O_SHELL=/bin/bash
+SGE_O_HOST=login6
+REQUEST=n1
+INCLUDE=/data/apps/R/3.0.1/lib64/R/include:/data/apps/intel/2011.5.220/composerxe-2011.5.220/ipp/include:/data/apps/intel/2011.5.220/composerxe-2011.5.220/mkl/include
+NSLOTS=6
+TBB30_INSTALL_DIR=/data/apps/intel/2011.5.220/composerxe-2011.5.220/tbb
+SGE_STDIN_PATH=/dev/null
+G_BROKEN_FILENAMES=1
+module=() {  eval `/data/apps/Modules/$MODULE_VERSION/bin/modulecmd bash $*`
+}
+_=/bin/env
+
+Hostfile used in job run:
+rho02.local 3 short_rho@rho02.local <NULL>
+rho07.local 1 short_rho@rho07.local <NULL>
+rho09.local 1 short_rho@rho09.local <NULL>
+rho14.local 1 short_rho@rho14.local <NULL>
+Init: uts.sysname: Linux
+Init: uts.nodename: rho02
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+
+Init: uts.sysname: Linux
+Init: uts.nodename: rho07
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+
+Init: uts.sysname: Linux
+Init: uts.nodename: rho09
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+
+Init: uts.sysname: Linux
+Init: uts.nodename: rho14
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+
+Now using mpi!
+Init: uts.sysname: Linux
+Init: uts.nodename: rho02
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+
+Init: uts.sysname: Linux
+Init: uts.nodename: rho02
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+
+Init: uts.sysname: Linux
+Init: uts.nodename: rho02
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+
+Init: uts.sysname: Linux
+Init: uts.nodename: rho09
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+
+Init: uts.sysname: Linux
+Init: uts.nodename: rho07
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+
+Init: uts.sysname: Linux
+Init: uts.nodename: rho14
+Init: uts.release: 2.6.18-274.el5
+Init: uts.version: #1 SMP Thu Jul 21 12:13:11 EDT 2011
+Init: uts.machine: x86_64
+

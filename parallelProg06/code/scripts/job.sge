@@ -1,0 +1,15 @@
+# Test info
+maxNumProcesses="_max_num_processes_"
+
+# Arguments to executable
+numParticles="_num_particles_"
+shape="_shape_"
+radius="_radius_"
+
+# Run jobs
+for numProcesses in $(seq $maxNumProcesses)
+do
+    printf "numNodes _num_nodes_ numProcesses $numProcesses " >> timing.txt
+    mpirun -n $numProcesses --hostfile hostfile /home/costrouc/code/mytime /home/costrouc/code/particles numParticles $numParticles shape $shape radius $radius 2>> timing.txt
+    echo "" >> timing.txt
+done
