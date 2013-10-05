@@ -1,10 +1,10 @@
 # CPSC 462 Parallel Programming
 
-This repository reflects all the work that was done in my cpsc 462 parallel programming class.
+This repository reflects all the work that was done in my cpsc 462 parallel programming class. A final project was also completed for the class and is available at ... .
 
 # Projects
 
-Each folder in the repositories reflect a project that was asigned in class.
+Each folder in the repositories reflect a project that was asigned in class. 
 
 # Webpage
 
