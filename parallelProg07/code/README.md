@@ -61,8 +61,10 @@ The program can be run as:
 The program will calculate the mean and variance of all:
 positions, distances, and inverse squared distance  
 
-Assume in 2D we have 2 particles p,q.
+For how to calculate the mean and varialce of scalar quantities see wikipedia http://en.wikipedia.org/wiki/Mean and http://en.wikipedia.org/wiki/Variance.
 
-\[distance(p,q) = \sqrt{(p.x - q.x)^2 + (p.y - q.y)^2)}\]
-\[inverse square distance = \frac{1}{distance(p,q)}\]
+Now for how to calculate the distance and inverse square distance. Assume in 2D we have 2 particles p,q.
+ 
+\[distance(p,q) = \sqrt{(p.x - q.x)^2 + (p.y - q.y)^2)}\]  
+\[inverse_square_distance(p,q) = \frac{1}{distance(p,q)}\]  
 
