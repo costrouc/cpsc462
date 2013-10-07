@@ -46,9 +46,6 @@ do
     sed -i "s/_shape_/$shape/g" particles.sge
     sed -i "s/_radius_/$radius/g" particles.sge
 
-    # Create hostfile for job
-    head -$numNodes ../../scripts/hostfile > hostfile
-
     # Submit job to queue
     qsub particles.sge
     
