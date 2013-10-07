@@ -63,5 +63,6 @@ positions, distances, and inverse squared distance
 
 Assume in 2D we have 2 particles p,q.
 
-/[distance = sqrt((p.x - q.x)^2 + (p.y - q.y)^2)\]
+\[distance(p,q) = \sqrt{(p.x - q.x)^2 + (p.y - q.y)^2)}\]
+\[inverse square distance = \frac{1}{distance(p,q)}\]
 
