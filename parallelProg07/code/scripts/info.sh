@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # This is a shell script to print job info from queued job
+# It prints the import enviroment information, loaded modules
+# Full enviroment, and pe_hostfile
+
+# Print Import enviroment info
 echo "================================================================"
 echo SHELL=$SHELL
 echo JOB_NAME=$JOB_NAME

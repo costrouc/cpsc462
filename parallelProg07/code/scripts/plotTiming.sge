@@ -1,0 +1,16 @@
+#$ -N _job_name_
+#$ -q short*
+#$ -cwd
+#$ -S /bin/bash
+#$ -hold_jid _test_names_
+
+# Load bashrc
+source /etc/bashrc
+source ~/.bashrc
+
+# Get info on job
+sh ../../scripts/info.sh
+
+cat n*/timing.txt > timing.txt
+
+python plotTiming.py

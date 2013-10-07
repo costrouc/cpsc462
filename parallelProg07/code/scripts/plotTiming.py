@@ -1,52 +1,91 @@
-"""
-File for plotting data
-"""
+import copy
+from collections import namedtuple
 
+TimingData = namedtuple("TimingData", "numNodes numProcesses times")
+
+inputFile = open("timing.txt", "r")
+
+line = inputFile.readline()
+
+timeData = []
+
+while line != "":
+    tokens = line.split()
+    numNodes = int(tokens[1])
+    numProcesses = int(tokens[3])
+
+    times = []
+    for i in range(5, len(tokens), 2):
+        times.append(float(tokens[i]))
+
+    timeData.append(TimingData(numNodes, numProcesses, copy.deepcopy(times)))
+    line = inputFile.readline()
+
+inputFile.close()
+
+import matplotlib as mpl
+mpl.use('Agg')
 import matplotlib.pyplot as plt
 
-filename = "timing.txt"
+import numpy as np
 
-inputFile1 = open(filename, "r")
-inputFile2 = open('../n2/'+filename, "r")
+maxNumNodes = 8
+maxNumProcesses = 32
 
+fig = plt.figure(figsize=(10,20))
+for i in range(1, maxNumNodes+1):
+    plt.subplot(4,2,i)
+    x = []
+    y = []
+    for t in timeData:
+        if (t.numNodes == i):
+            for j in range(len(t.times)):
+                x.append(t.numProcesses)
+                y.append(t.times[j])
 
-line = inputFile1.readline()
+    z = np.polyfit(x,y,1)
+    p = np.poly1d(z)
+    plt.text( 1, 700, 't = %2.2f + %2.2fn' % (z[1], z[0]))
+    plt.plot(x, p(x), 'k--')    
+    plt.axis([0,33, 0, 770])
+    plt.scatter(x, y, color=np.random.rand(3,1), alpha=0.8)
+    plt.xlabel('Number of Processes [#]')
+    plt.ylabel('Time for Process [seconds]')
+    plt.title('%d cores' % i) 
 
-numProcesses1 = []
-numProcesses2 = []
-times1 = []
-times2 = []
+fig.savefig('../plots/timing_scatter.png' , transparent=True)
 
-while line != '':
-    tokens = line.split()
-    numProcesses1.append(int(tokens[3]))
-    runTimes = []
-    for i in range(5,len(tokens),2):
-        runTimes.append(float(tokens[i]))
+fig = plt.figure(figsize=(10,20))
+for i in range(1, maxNumNodes+1):
+    plt.subplot(4,2,i)
+    x = np.array([t.numProcesses for t in timeData if t.numNodes == i])
+    y = np.array([max(t.times) for t in timeData if t.numNodes == i])
 
-    times1.append(max(runTimes))
-    line = inputFile1.readline()
+    z = np.polyfit(x,y,1)
+    p = np.poly1d(z)
+    plt.text( 1, 700, 't = %2.2f + %2.2fn' % (z[1], z[0]))
+    plt.axis([0,33, 0, 770])
+    plt.plot(x, p(x), 'k--')    
+    plt.scatter(x, y, color=np.random.rand(3,1))
+    plt.xlabel('Number of Processes [#]')
+    plt.ylabel('Time [seconds]')
+    plt.title('%d cores' % i) 
 
-inputFile1.close()
+fig.savefig('../plots/timing_max.png' , transparent=True)
 
-line = inputFile2.readline()
+fig = plt.figure(figsize=(15,10))
+for i in range(1, maxNumNodes+1):
+    x = np.array([t.numProcesses for t in timeData if t.numNodes == i])
+    y = np.array([max(t.times) for t in timeData if t.numNodes == i])
+    
+    plt.plot(x, y, '-o', label='%d nodes' % i)
 
-while line != '':
-    tokens = line.split()
-    numProcesses2.append(int(tokens[3]))
-    runTimes = []
-    for i in range(5,len(tokens),2):
-        runTimes.append(float(tokens[i]))
-
-    times2.append(max(runTimes))
-    line = inputFile2.readline()
-
-inputFile2.close()
-
-
-plt.plot(numProcesses1[1:-1], times1[1:-1], 'ro-')
-plt.plot(numProcesses2[1:-1], times2[1:-1], 'ro-')
+plt.axis([0, 33, 0, 770])
 plt.xlabel('Number of Processes [#]')
 plt.ylabel('Time [seconds]')
-plt.title('Time for n Processes to complete on 1 and 2 cores')
-plt.savefig('../../plots/timingscompared.png')
+plt.title('Comparison of runtimes of n Processes on 1 .. 8 cores')
+plt.legend()
+
+fig.savefig('../plots/timing_compare.png' , transparent=True)
+
+
