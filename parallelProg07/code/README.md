@@ -1,5 +1,22 @@
-Author: Christopher Ostrouchov MS&E Graduate Research Assistant
-Contact: costrouc@utk.edu
+Author: Christopher Ostrouchov MS&E Graduate Research Assistant  
+Please Contact costrouc at utk dot edu for questions.
+
+This program assumes that it is opperating on a cluster that is
+opperated with the sun grid engine queueing system. For ease of
+opperation please only use the makefile! A lot of things are
+automated with shell scripting controlled by the makefile.
+Including test dependencies.
+
+Dependencies:
+-  python 3.2.1
+-  matplotlib
+-  gcc
+-  openmpi-gcc
+
+Terminology:
+-  __nodes__ a collection of cores
+-  __core__ a single opperation unit that shares the same registers
+-  __process__ a single job for the OS to run
 
 # Installation
 
@@ -7,19 +24,19 @@ To install the particle executable:
 > make
 
 # Running Tests
-The code will run timing tests for p processes 1-32 on n nodes 1-6
+
+## Current Tests Available
+Timing - Running code on c cores with p processes (limit of 8 cores).
+In order the change these parameters look at script/timing.sh.
+Change `$maxNumProcessors` and `$maxNumNodes`.
 
 To generate test run:
 > make test
 
-To run each test
-> cd test
-> cd (into directory to run generated test)
-> sh particles.sge (note: this will only run on the clusters preconfigured)
-
 # Generate Plots
-> cd test
-> python plotData.py
+The plots should be automatically generated once the tests are done. This is done via a dependency of plotting the timing data once sun grid engine tests being done. In the case that this does not work please run the following command once the tests are done. You can easily see if your jobs are done with `qstat -u <username>`.  
+
+> make plots  
 
 Then cd to plots directory to view plots
 
