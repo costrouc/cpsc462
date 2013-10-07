@@ -1,9 +1,9 @@
 Author: Christopher Ostrouchov MS&E Graduate Research Assistant  
 Please Contact costrouc at utk dot edu for questions.
 
-This program assumes that it is opperating on a cluster that is
-opperated with the sun grid engine queueing system. For ease of
-opperation please only use the makefile! A lot of things are
+This program assumes that it is operating on a cluster that is
+operated with the sun grid engine queuing system. For ease of
+operation please only use the makefile! A lot of things are
 automated with shell scripting controlled by the makefile.
 Including test dependencies.
 
@@ -15,7 +15,7 @@ Dependencies:
 
 Terminology:
 -  __nodes__ a collection of cores
--  __core__ a single opperation unit that shares the same registers
+-  __core__ a single operation unit that shares the same registers
 -  __process__ a single job for the OS to run
 
 # Installation
@@ -38,24 +38,24 @@ The plots should be automatically generated once the tests are done. This is don
 
 > make plots  
 
-Then cd to plots directory to view plots
+Then `cd` to plots directory to view plots
 
 # Running Program
 The program can be run as:
 > ./particle numParticles *numParticles* shape *shape* radius *radius*
 
 *numParticles* - number of Particles to run in simulation
-                 (0 < *numParticles* < __MAX_UNSIGNED_INT__)
+                 (0 < *numParticles* < MAX_UNSIGNED_INT)  
 *shape*        - volume that random particles are placed into
-                 (*shape* : {disk, square})
+                 (*shape* : {disk, square})  
 *radius*       - radius of the shape for the particles to be placed into
-                 (0.0 < *radius* < __MAX_DOUBLE__)
+                 (0.0 < *radius* < MAX_DOUBLE)  
 
 # Capabilities
 
 ## Generate Statistics on particles
 
-The program will calculate the mean and variace of all:
+The program will calculate the mean and variance of all:
 positions, distances, and inverse squared distance
 
 
