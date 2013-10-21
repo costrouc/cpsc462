@@ -1,0 +1,67 @@
+<section id="program-7">
+  <h2>Program 7
+    <div class="btn-group pull-right">
+      <a class="btn btn-small" href="../parallelProg07/code/">Source</a>
+      <a class="btn btn-small" href="../parallelProg07/code/parallelProg07.tgz">Tar File</a>
+    </div>
+  </h2>
+
+  Similary to Projects 5/6 we were to time our partice code that
+  was written in class. However, the program was to be run on the
+  newton cluster. Runnning code on the newton cluster is much
+  different from running on our own clusters because we
+  are <b>sharing</b> processing time with other users. To
+  safeguard ourselves from using other peoples cores we reserved 8
+  cores all on the same node. To bind our processes to the number
+  of cores that were to be used we used a program
+  called <code>Taskset</code>. The code was run on 1-8 cores. The
+  parameters for particles: <br>
+  numParticles 8000 <br>
+  shape square <br>
+  radius 1.0 <br>
+
+  <figure>
+    <center>
+      <img src="../parallelProg07/code/plots/timing_scatter.png" class="img-responsive">
+      <figcaption>
+	This plot shows the run times for each process in p
+	processes run on n cores. A least square polynomial of
+	degree 1 was fit to each plot. We can see as expected
+	the slope (also the expected job run time) decreases
+	proportionally to the the number of cores
+	allocated. Also the associated cost of running more
+	processes than cores can be interpreted as the constant
+	in each equation. This constant increases as the number
+	of cores allocated increases.
+      </figcaption>
+    </center>
+  </figure>
+
+  <figure>
+    <center>
+      <img src="../parallelProg07/code/plots/timing_max.png" class="img-responsive">
+      <figcaption>
+	Similar to the previous plot we have plotted the maximum
+	run time of all the processes.  In my runs this time is
+	equal to the total run time. We can see that the least
+	squares fit for the data gets very similar results to
+	the previous figure. From this plot we can tell that
+	each core has two cores by looking at the number of
+	processes that must ad be allocated before the points
+	break away from being constant.
+      </figcaption>
+    </center>
+  </figure>
+
+  <figure>
+    <center>
+      <img src="../parallelProg07/code/plots/timing_compare.png" class="img-responsive">
+      <figcaption>
+	The max run times for p processes on n cores are
+	plotted together with color separation for the different
+	number of cores allocated.
+      </figcaption>
+    </center>
+  </figure>
+  
+</section>

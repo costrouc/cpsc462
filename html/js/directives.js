@@ -32,3 +32,21 @@ myAppDirectives.directive('editorText', function(fileText) {
     };
 });
 
+myAppDirectives.directive('ngMarkdownjax', function () {
+    var converter = new Showdown.converter();
+    return {
+        restrict: 'C',
+	require: '^ngModel',
+	scope: {
+	    ngModel: '='
+	},
+	template: '<section><h1> This is the value {{ngModel}}</h1></section>'
+//	link: function (scope, element, attrs) {
+//          var htmlText = converter.makeHtml(element.text());
+//	    element.html(htmlText);
+//	    MathJax.Hub.Queue(["Reprocess", MathJax.Hub, element[0]]);
+//        }
+    };
+});
+
+

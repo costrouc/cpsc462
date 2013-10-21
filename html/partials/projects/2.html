@@ -1,0 +1,57 @@
+<section id="program-2">
+  <h2>Program 2
+    <div class="btn-group pull-right">
+      <a class="btn btn-small" href="../parallelProg02/">Source</a>
+      <a class="btn btn-small" href="../parallelProg02/parallelProg01.tgz">Tar File</a>
+    </div>
+  </h2>
+  
+  <p>
+    A program was written to generate n particles in a 2D space
+    and calculate statistics on those particles based on their
+    location. The statistics calculated on the particles include
+    the mean and variance of the positions, the distances
+    between two particles, and the inverse square distances
+    between two particles. The program takes three arguments as
+    input. <code>numParticles</code> determines the number of
+    particles to generate and calculate statistics
+    on. <code>shape</code> determines the container that the
+    particles need to fit within. It is required that the shape
+    be either a square or disk. Finally <code>radius</code>
+    determines the radius of the disk or half the side length
+    of the square.
+  </p>
+  
+  <h3>ParseFlags.c</h3>
+
+  <div ng-controller="textEditorController">
+    <div editor-text="../parallelProg06/code/parseFlags.c"></div>
+  </div>
+  
+  <h3>particle.c</h3>
+
+  <div ng-controller="textEditorController">
+    <div editor-text="../parallelProg06/code/particle.c"></div>
+  </div>
+  
+  <h3>statistics.c</h3>
+
+  <div ng-controller="textEditorController">
+    <div editor-text="../parallelProg06/code/statistics.c"></div>
+  </div>
+
+  <h3>Helper Scripts</h3>
+  
+  <figure>
+    <center>
+      <img src="../parallelProg02/plots/timing.png"  class="img-responsive">
+      <figcaption>
+	This plot show the amount of time that it takes for a
+	particle generation and statistics program to generate n
+	particles and calculate the means and variances of the
+	positions, distances, and inverse square distances.
+	This calculation is expected to be O(N^2).
+      </figcaption>
+    </center>
+  </figure>
+</section>

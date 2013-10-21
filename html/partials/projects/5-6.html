@@ -1,0 +1,63 @@
+
+
+<section id="program-5-6">
+  <h2>Program 5/6
+    <div class="btn-group pull-right">
+      <a class="btn btn-small" href="../parallelProg06/code/">Source</a>
+      <a class="btn btn-small" href="../parallelProg06/code/parallelProg06.tgz">Tar File</a>
+    </div>
+  </h2>
+  
+  In this project we were to time our code with p processes on n
+  nodes. For these test we ran on 1 to 6 nodes. Each node has 2
+  cpus clocked at 2.8 GHz. Parameters that were used for timing
+  the code were as follows:
+  <br>
+  numParticles 8000 <br>
+  shape square <br>
+  radius 1.0 <br>
+
+  <figure>
+    <center>
+      <img src="../parallelProg06/code/plots/timing_scatter.png"  class="img-responsive">
+      <figcaption>
+	This plot shows the run times for each process in p
+	processes run on n nodes. A least square polynomial of
+	degree 1 was fit to each plot. We can see as expected
+	the slope (also the expected job run time) decreases
+	proportionally to the the number of nodes
+	allocated. Also the associated cost of running more
+	processes than nodes can be interpreted as the constant
+	in each equation. This constant increases as the number
+	of nodes allocated increases.
+      </figcaption>
+    </center>
+  </figure>
+
+  <figure>
+    <center>
+      <img src="../parallelProg06/code/plots/timing_max.png"  class="img-responsive">
+      <figcaption>
+	Similar to the previous plot we have plotted the maximum
+	run time of all the processes.  In my runs this time is
+	equal to the total run time. We can see that the least
+	squares fit for the data gets very similar results to
+	the previous figure. From this plot we can tell that
+	each node has two cores by looking at the number of
+	processes that must ad be allocated before the points
+	break away from being constant.
+      </figcaption>
+    </center>
+  </figure>
+
+  <figure>
+    <center>
+      <img src="../parallelProg06/code/plots/timing_compare.png" class="img-responsive" >
+      <figcaption>
+	The max run times for p processes on n nodes are plotted
+	together with color separation for the different number
+	of nodes allocated.
+      </figcaption>
+    </center>
+  </figure>
+</section>
