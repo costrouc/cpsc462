@@ -6,8 +6,6 @@ rm -f timing.txt
 # Create mpiscript
 rm -f particle.qsub
 
-
-
 # Check if executables are made
 if [ ! -d "./particles" ]
 then

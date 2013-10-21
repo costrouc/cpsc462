@@ -22,7 +22,7 @@ mytime: mytime.c
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -f *.o parallelProg06.tgz timing.txt
+	rm -f *.o parallelProg07.tgz timing.txt
 
 pristine: clean
 	rm -f $(EXECUTABLE) mytime *~
@@ -34,4 +34,4 @@ plot: test
 	python plotTiming.py
 
 release: pristine
-	cd ..; tar --exclude='code/test' -zcvf parallelProg06.tgz code; mv parallelProg06.tgz code/.
+	cd ..; tar --exclude='code/test' -zcvf parallelProg07.tgz code; mv parallelProg07.tgz code/.

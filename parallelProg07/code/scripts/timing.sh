@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script assumes that it is being run in the test dir
 # current path should be */code/test/
 
@@ -5,7 +7,7 @@ numParticles="8000"
 shape="square"
 radius="1.0"
 
-maxNumNodes="1"
+maxNumNodes="8"
 maxNumProcesses="32"
 
 testDirPath=$PWD
@@ -35,7 +37,7 @@ do
     printf "Parameters:\nnumParticles $numParticles\nshape $shape\nradius $radius\n" >> testInfo.txt
     
     # Create qsub sge submission file
-    cp ../../scripts/job.sge particles.sge
+    cp ../../scripts/timing.sge particles.sge
 
     sed -i "s/_job_name_/$testName/g" particles.sge
     sed -i "s/_num_nodes_/$numNodes/g" particles.sge
@@ -44,9 +46,26 @@ do
     sed -i "s/_shape_/$shape/g" particles.sge
     sed -i "s/_radius_/$radius/g" particles.sge
 
-    # Create hostfile for job
-    head -$numNodes ../../scripts/hostfile > hostfile
+    # Submit job to queue
+    qsub particles.sge
     
     # Return to original directory
     cd $testDirPath
 done
+
+# Submit ploting of tests
+# This job is dependent on all the others
+testNames=$(printf 'n%d,'  $(seq 1 $maxNumNodes))
+cp ../scripts/plotTiming.sge .
+
+# Job name requirements
+# An object name is a sequence of up to 512 ASCII string char-
+#     acters  except  "\n",  "\t",  "\r", " ", "/", ":", "'", "\",
+#     "[", "]", "{", "}", "|", "(", ")", "@", "%", ","  or  the  "
+#     character itself.
+
+sed -i "s/_job_name_/plotTimings_n1-n$maxNumNodes/g" plotTiming.sge
+sed -i "s/_test_names_/$testNames/g" plotTiming.sge
+
+qsub plotTiming.sge
+

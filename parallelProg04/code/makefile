@@ -22,7 +22,7 @@ mytime: mytime.c
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -f *.o parallelProg02.tgz timing.txt
+	rm -f *.o parallelProg04.tgz timing.txt
 
 pristine: clean
 	rm -f $(EXECUTABLE) mytime *~

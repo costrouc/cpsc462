@@ -20,28 +20,32 @@
 
 	  <ul class="nav navbar-nav">
 	    <li>
-	      <a ng-click="scrollTo('program-1')">
+	      <a href="#/projects?scrollTo=program-1">
 		Program 1 <i class="icon-arrow-right"></i></a>
 	    </li>
 	    <li>
-	      <a ng-click="scrollTo('program-2')">
+	      <a href="#/projects?scrollTo=program-2">
 		Program 2 <i class="icon-arrow-right"></i></a>
 	    </li>
 	    <li>
-	      <a ng-click="scrollTo('program-3')">
+	      <a href="#/projects?scrollTo=program-3">
 		Program 3 <i class="icon-arrow-right"></i></a>
 	    </li>
 	    <li>
-	      <a ng-click="scrollTo('program-4')">
+	      <a href="#/projects?scrollTo=program-4">
 		Program 4 <i class="icon-arrow-right"></i></a>
 	    </li>
 	    <li>
-	      <a ng-click="scrollTo('program-5/6')">
+	      <a href="#/projects?scrollTo=program-5-6">
 		Program 5 <i class="icon-arrow-right"></i></a>
 	    </li>
 	    <li>
-	      <a ng-click="scrollTo('program-5/6')">
+	      <a href="#/projects?scrollTo=program-5-6">
 		Program 6 <i class="icon-arrow-right"></i></a>
+	    </li>
+	    <li>
+	      <a href="#/projects?scrollTo=program-7">
+		Program 7 <i class="icon-arrow-right"></i></a>
 	    </li>
 	  </ul>
 	</div>
@@ -70,6 +74,7 @@
 
 	<div ng-controller="textEditorController">
 	  <div editor-text="http://cosc462.newton.utk.edu/costrouc/parallelProg01/compute.c"></div>
+<<<<<<< HEAD
 	 </div>
 
 	 <p>
@@ -106,6 +111,44 @@
 	     </figcaption>
 	   </center>
 	 </figure>
+=======
+	</div>
+
+	<p>
+	  We can see from the file compute.h that <code>effort</code>
+	  determines the amount of time that the
+	  function <code>Compute(float effort)</code> waits. This is
+	  accomplished using a function <code>nanosleep()</code>
+	  provided in time.h.
+	</p>
+
+	<h3>readNumbers.c</h3>
+
+	<div ng-conroller="textEditorController">
+	  <div editor-text="http://cosc462.newton.utk.edu/costrouc/parallelProg01/readNumbers.c"></div>
+	</div>
+
+	<p>
+	  This file opens a file with given
+	  name <code>filename</code>. All the proper file opening and
+	  closing is preformed. Of interest is line 20. In the while
+	  loop we can see that for each number read in it calls the
+	  previously discussed <code>Compute(effort)</code>.
+	</p>
+
+	<h2>Results/Discussion</h2>
+
+	<h3>Figure 1</h3>
+	<figure>
+	  <center>
+	    <img src="../parallelProg01/plots/timing.png"  class="img-responsive">
+	    <figcaption>		
+	      Program readNumbers was run on text files with 1, 2, 4 , 8, 16, 32,
+	      64, 128, 256, 512 numbers.
+	    </figcaption>
+	  </center>
+	</figure>
+>>>>>>> 311e6cfa8fa62b5ab632cd5201d728aff5a0da0f
 
 	<p>
 	  Looking at Figure 1 we can see a very apparent linear
@@ -146,20 +189,20 @@
 	<h3>ParseFlags.c</h3>
 
 	<div ng-controller="textEditorController">
-	   <div editor-text="http://cosc462.newton.utk.edu/costrouc/parallelProg06/code/parseFlags.c"></div>
-	 </div>
+	  <div editor-text="http://cosc462.newton.utk.edu/costrouc/parallelProg06/code/parseFlags.c"></div>
+	</div>
 	
 	<h3>particle.c</h3>
 
 	<div ng-controller="textEditorController">
-	   <div editor-text="http://cosc462.newton.utk.edu/costrouc/parallelProg06/code/particle.c"></div>
-	 </div>
-		
+	  <div editor-text="http://cosc462.newton.utk.edu/costrouc/parallelProg06/code/particle.c"></div>
+	</div>
+	
 	<h3>statistics.c</h3>
 
 	<div ng-controller="textEditorController">
-	   <div editor-text="http://cosc462.newton.utk.edu/costrouc/parallelProg06/code/statistics.c"></div>
-	 </div>
+	  <div editor-text="http://cosc462.newton.utk.edu/costrouc/parallelProg06/code/statistics.c"></div>
+	</div>
 
 	<h3>Helper Scripts</h3>
 	
@@ -229,30 +272,37 @@
 	
       </section>
 
-      <section id="program-5/6">
-	<h2>Project 5 + 6</h2>
-	In this project we were to time our code with p processes on n nodes. For these
-	test we ran on 1 to 6 nodes. Each node has 2 cpus clocked at 2.8 GHz. Parameters
-	that were used for timing the code were as follows:
+
+      <section id="program-5-6">
+	<h2>Program 5/6
+	  <div class="btn-group pull-right">
+	    <a class="btn btn-small" href="../parallelProg06/code/">Source</a>
+	    <a class="btn btn-small" href="../parallelProg06/code/parallelProg06.tgz">Tar File</a>
+	  </div>
+	</h2>
+	
+	In this project we were to time our code with p processes on n
+	nodes. For these test we ran on 1 to 6 nodes. Each node has 2
+	cpus clocked at 2.8 GHz. Parameters that were used for timing
+	the code were as follows:
 	<br>
 	numParticles 8000 <br>
 	shape square <br>
 	radius 1.0 <br>
-	<p>
-	  <a class="btn btn-small" href="../../parallelProg06/code/">Source</a>
-	  <a class="btn btn-small" href="../../parallelProg06/code/parallelProg06.tgz">Tar File</a>
-	</p>
+
 	<figure>
 	  <center>
 	    <img src="../parallelProg06/code/plots/timing_scatter.png"  class="img-responsive">
 	    <figcaption>
-	      This plot shows the run times for each process in p processes
-	      run on n nodes. A least square polynomial of degree 1 was fit to each
-	      plot. We can see as expected the slope (also the expected job run time)
-	      decreases proportionally to the the number of nodes allocated. Also
-	      the associated cost of running more processes than nodes can be interpreted
-	      as the constant in each equation. This constant increases as the number of nodes
-	      allocated increases.
+	      This plot shows the run times for each process in p
+	      processes run on n nodes. A least square polynomial of
+	      degree 1 was fit to each plot. We can see as expected
+	      the slope (also the expected job run time) decreases
+	      proportionally to the the number of nodes
+	      allocated. Also the associated cost of running more
+	      processes than nodes can be interpreted as the constant
+	      in each equation. This constant increases as the number
+	      of nodes allocated increases.
 	    </figcaption>
 	  </center>
 	</figure>
@@ -261,11 +311,14 @@
 	  <center>
 	    <img src="../parallelProg06/code/plots/timing_max.png"  class="img-responsive">
 	    <figcaption>
-	      Similar to the previous plot we have plotted the maximum run time of all the processes.
-	      In my runs this time is equal to the total run time. We can see that the least squares
-	      fit for the data gets very similar results to the previous figure. From this plot we can
-	      tell that each node has two cores by looking at the number of processes that must
-	      ad		be allocated before the points break away from being constant.
+	      Similar to the previous plot we have plotted the maximum
+	      run time of all the processes.  In my runs this time is
+	      equal to the total run time. We can see that the least
+	      squares fit for the data gets very similar results to
+	      the previous figure. From this plot we can tell that
+	      each node has two cores by looking at the number of
+	      processes that must ad be allocated before the points
+	      break away from being constant.
 	    </figcaption>
 	  </center>
 	</figure>
@@ -274,11 +327,80 @@
 	  <center>
 	    <img src="../parallelProg06/code/plots/timing_compare.png" class="img-responsive" >
 	    <figcaption>
-	      The max run times for p processes on n nodes are plotted together with color separation
-	      for the different number of nodes allocated.
+	      The max run times for p processes on n nodes are plotted
+	      together with color separation for the different number
+	      of nodes allocated.
 	    </figcaption>
 	  </center>
 	</figure>
+      </section>
+
+      <section id="program-7">
+	<h2>Program 7
+	  <div class="btn-group pull-right">
+	    <a class="btn btn-small" href="../parallelProg07/code/">Source</a>
+	    <a class="btn btn-small" href="../parallelProg07/code/parallelProg07.tgz">Tar File</a>
+	  </div>
+	</h2>
+
+	Similary to Projects 5/6 we were to time our partice code that
+	was written in class. However, the program was to be run on the
+	newton cluster. Runnning code on the newton cluster is much
+	different from running on our own clusters because we
+	are <b>sharing</b> processing time with other users. To
+	safeguard ourselves from using other peoples cores we reserved 8
+	cores all on the same node. To bind our processes to the number
+	of cores that were to be used we used a program
+	called <code>Taskset</code>. The code was run on 1-8 cores. The
+	parameters for particles: <br>
+	numParticles 8000 <br>
+	shape square <br>
+	radius 1.0 <br>
+
+	<figure>
+	  <center>
+	    <img src="../parallelProg07/code/plots/timing_scatter.png" class="img-responsive">
+	    <figcaption>
+	      This plot shows the run times for each process in p
+	      processes run on n cores. A least square polynomial of
+	      degree 1 was fit to each plot. We can see as expected
+	      the slope (also the expected job run time) decreases
+	      proportionally to the the number of cores
+	      allocated. Also the associated cost of running more
+	      processes than cores can be interpreted as the constant
+	      in each equation. This constant increases as the number
+	      of cores allocated increases.
+	    </figcaption>
+	  </center>
+	</figure>
+
+	<figure>
+	  <center>
+	    <img src="../parallelProg07/code/plots/timing_max.png" class="img-responsive">
+	    <figcaption>
+	      Similar to the previous plot we have plotted the maximum
+	      run time of all the processes.  In my runs this time is
+	      equal to the total run time. We can see that the least
+	      squares fit for the data gets very similar results to
+	      the previous figure. From this plot we can tell that
+	      each core has two cores by looking at the number of
+	      processes that must ad be allocated before the points
+	      break away from being constant.
+	    </figcaption>
+	  </center>
+	</figure>
+
+	<figure>
+	  <center>
+	    <img src="../parallelProg07/code/plots/timing_compare.png" class="img-responsive">
+	    <figcaption>
+	      The max run times for p processes on n cores are
+	      plotted together with color separation for the different
+	      number of cores allocated.
+	    </figcaption>
+	  </center>
+	</figure>
+	
       </section>
     </div>
   </div>
