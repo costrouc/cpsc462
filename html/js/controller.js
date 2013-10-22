@@ -20,6 +20,3 @@ var homeController = function () {
   
 };
 
-var textEditorController  = function($scope) {
-
-};

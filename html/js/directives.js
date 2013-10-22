@@ -10,10 +10,10 @@ myAppDirectives.directive('appVersion', ['version', function(version) {
     };
 }]);
 
-myAppDirectives.directive('editorText', function(fileText) {
-    return function(scope, elm, attrs) {
+myAppDirectives.directive('aceeditor', function(fileText) {
+    return function(scope, element, attrs) {
 
-	var acee = window.ace.edit(elm[0]);
+	var acee = window.ace.edit(element[0]);
 	var session = acee.getSession();
 	var renderer = acee.renderer;
 	
@@ -26,27 +26,24 @@ myAppDirectives.directive('editorText', function(fileText) {
 
 	renderer.setShowGutter(true);
     	
-	fileText.async(attrs.editorText).then(function(text) {
+	fileText.async(attrs.src).then(function(text) {
 	    session.setValue(text);
 	});
     };
 });
 
-myAppDirectives.directive('ngMarkdownjax', function () {
-    var converter = new Showdown.converter();
+myAppDirectives.directive('markdownjax', function (fileText) {
+    var converter = new Markdown.Converter();
     return {
-        restrict: 'C',
-	require: '^ngModel',
-	scope: {
-	    ngModel: '='
-	},
-	template: '<section><h1> This is the value {{ngModel}}</h1></section>'
-//	link: function (scope, element, attrs) {
-//          var htmlText = converter.makeHtml(element.text());
-//	    element.html(htmlText);
-//	    MathJax.Hub.Queue(["Reprocess", MathJax.Hub, element[0]]);
-//        }
-    };
+	restrict: "A",
+	link: function (scope, element, attrs) {
+	    fileText.async(attrs.src).then(function(text) {
+		var htmlText = converter.makeHtml(text);
+		element.html(htmlText);
+		MathJax.Hub.Typeset(element[0]);
+	    });
+        }
+    }
 });
 
 
