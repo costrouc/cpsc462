@@ -77,9 +77,9 @@ Read the github README! Run the executable as `python pysrim.py -h` for help.
 
 ## Running pySRIM via Web Interface
 __But First__ please visit the web interface it allows you to run the code via a web browser and creates automatic plots and summary statistics. I have already included example jobs that were run via my machine as a web server.  
-Submitting a job can be done [here](http://finch.desktops.utk.edu/submit)  
-Viewing the database of jobs that have been run, are running, and are in the queue [here](http://finch.desktops.utk.edu/database)  
-Viewing individual jobs that were run E.G [here](http://finch.desktops.utk.edu/job/1)  
+Submitting a job can be done [here](http://finch.desktops.utk.edu/#/submit)  
+Viewing the database of jobs that have been run, are running, and are in the queue [here](http://finch.desktops.utk.edu/#/database)  
+Viewing individual jobs that were run E.G [here](http://finch.desktops.utk.edu/#/job/1)  
 
 # 7 Results of Tests
 
