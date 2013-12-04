@@ -61,7 +61,7 @@ Due to using mpi the number of cores used can be changed as well.
 
 Thus I have identified three dimensions to the runtime of the code: number of cores, number of ions, energy of each ion.
 
-The makefile provided with pysrim can test these via the command `make test`. It will automatically run each test and plot the resulting graphs seen below in section 8.
+The makefile provided with pysrim can test these via the command `make test`. It will automatically run each test and plot the resulting graphs seen below in section 8. The tests are expected to take roughly 30 minutes.
 
 The [web interface](http://finch.desktops.utk.edu) has build in testing that provides the runtime for each job and postprocessing (creating plots, summary statistics, etc.).
 
@@ -77,9 +77,9 @@ Read the github README! Run the executable as `python pysrim.py -h` for help.
 
 ## Running pySRIM via Web Interface
 __But First__ please visit the web interface it allows you to run the code via a web browser and creates automatic plots and summary statistics. I have already included example jobs that were run via my machine as a web server.  
-Submitting a job can be done [here](http://finch.desktops.utk.edu/submit)
-Viewing the database of jobs that have been run, are running, and are in the queue [here](http://finch.desktops.utk.edu/database)
-Viewing individual jobs that were run E.G [here](http://finch.desktops.utk.edu/job/1)
+Submitting a job can be done [here](http://finch.desktops.utk.edu/submit)  
+Viewing the database of jobs that have been run, are running, and are in the queue [here](http://finch.desktops.utk.edu/database)  
+Viewing individual jobs that were run E.G [here](http://finch.desktops.utk.edu/job/1)  
 
 # 7 Results of Tests
 
@@ -106,4 +106,4 @@ Both codes are available on Github and I plan to contribute to them often. Easil
 pySRIM: [http://github.com/costrou/pysrim](http://github.com/costrou/pysrim)  
 webinteractive: [https://github.com/costrou/WebInteraction](https://github.com/costrou/WebInteraction)  
 
-
+Website: [http://finch.desktops.utk.edu](http://finch.desktops.utk.edu)
